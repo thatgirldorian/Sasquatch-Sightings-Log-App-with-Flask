@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Sasquatch Websighting - Dashboard</title>
+</head>
+<body>
+    
+    <h2>Sasquatch Websighting</h2>
+    <h4 class="user-name">{{user.first_name}} {{user.last_name}}</h4>
+
+    <a href="/new/sighting" class="report btn btn-info">Report a sighting</a> <br>
+    <a href="/logout" class="logout btn btn-info">Logout</a>
+
+    <div class="sightings-col">
+        <h4>Reported sightings</h4>
+        <!-- Use a Jinja loop here -->
+        <div class="sightings-box">
+            <div class="sighting">
+                {% for each in all_sightings %}
+                <h6>Bluff creek</h6> - <p>10/20/1967</p> <br>
+                <h6>Reported by:</h6> {{user.first_name}} {{user.last_name}}
+                <div class="sighting-btn">
+                    <a href="/" class=" btn btn-info">Edit</a> <br>
+                    <a href="/" class=" btn btn-info">Delete</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+
+
+
+</body>
+</html>

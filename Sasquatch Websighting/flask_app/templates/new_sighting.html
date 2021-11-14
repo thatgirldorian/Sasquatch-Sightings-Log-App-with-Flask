@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Sasquatch Websighting - Dashboard</title>
+</head>
+<body>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Sasquatch Websighting - Create New</title>
+</head>
+<body>
+    
+    <h2>Sasquatch Websighting</h2>
+    <h4 class="user-name">Bee Uji</h4>
+
+    <a href="/dashboard" class="report btn btn-info">Dashboard</a> <br>
+    <a href="/logout" class="logout btn btn-info">Logout</a>
+
+    <div class="report-col">
+        <h4>Report a sighting</h4>
+        <form action="/report" method="post" class=" col-4 p-4">
+            {% with messages = get_flashed_messages(category_filter=['report']) %}
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+            <div class="mb-3">
+                <label for="location">Location:</label>
+                <input type="text" name="location" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="what_happened">What Happened:</label>
+                <input type="text" name="what_happened" class="form-control">
+                <!-- <textarea class="form-control" name="" id="what_happened" rows="3"></textarea> -->
+            </div>
+
+            <div class="second-col">
+                <div class="mb-3 ">
+                    <label for="date_of_sighting">Date of sighting:</label>
+                    <input type="date" name="date_of_sighting" class="form-control">  
+                </div>
+                <div class="mb-3">
+                    <label for="no_of_sas">Number of Sasquatch:</label>
+                    <input type="number" name="no_of_sas" id="no_of_sas" step="1">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Report</button>
+        </form>
+    </div>
+    
+    
+
+
+
+</body>
+</html>
+    
+    
+
+
+
+</body>
+</html>
