@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Sasquatch Websighting - Dashboard</title>
+</head>
+<body>
+    
+    <h2>Sasquatch Websighting</h2>
+    <h4 class="user-name">{{user.first_name}} {{user.last_name}}</h4>
+
+    <a href="/new/sighting" class="report btn btn-info">Report a sighting</a> <br>
+    <a href="/logout" class="logout btn btn-info">Logout</a>
+
+    <div class="sightings-col">
+        <h4>Reported sightings</h4>
+        
+
+        <div class="sightings-box">
+            {% for sighting in sightings %}
+            <div class="sighting">
+                <h6>{{sighting.location}}</h6> - <p>{{sighting.date_of_sighting}}</p> <br>
+                <h6>Reported by: {{user.first_name}} {{user.last_name}}</h6> 
+                    {% if sighting.users_id == session.users_id %}
+                    <a class="sighting-btn btn btn-info" href="/edit/{{sighting.id }}">Edit</a>
+                    <a class="sighting-btn btn btn-info" href="/delete/{{sighting.id }}">Delete</a>
+                    {% else %}
+                    <a class="sighting-btn btn btn-info" href="/show/{{sighting.id }}">View</a> 
+                    {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>
