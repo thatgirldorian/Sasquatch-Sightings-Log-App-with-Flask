@@ -1,0 +1,86 @@
+h2 {
+    padding-left: 25px;
+}
+
+.user-name {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+.report {
+    position: absolute;
+    right:30px;
+}
+
+.logout {
+        position: absolute;
+        right:30px;
+        top: 100px;
+    }
+
+.sightings-col {
+    padding-left: 25px;
+    padding-top: 50px;
+}
+
+.sightings-box {
+    width: 1200px;
+    height: 580px;
+    border: 1px solid black;
+}
+
+.sighting {
+    padding-left: 20px;
+    border-bottom: 1px solid black;
+}
+
+.sighting h6, p {
+    display: inline;
+    padding: 15px;
+}
+
+.sighting-btn{
+    display: inline;
+    margin: 10px;
+    position: relative;
+    left: 200px;
+    bottom: 15px;
+}
+
+.sighting-btn a {
+    margin: 10px;
+}
+
+.col-btn {
+    display: inline;
+}
+
+.report-col {
+    padding-left: 100px;
+    padding-top: 50px;
+}
+
+.report-col h4 {
+    padding-bottom: 40px;
+}
+
+.report-col h5 {
+    padding-bottom: 25px;
+}
+
+.card-title {
+    padding-top: 25px;
+}
+
+
+
+.second-col {
+    position: absolute;
+    right: -520px;
+    top: 20px;
+}
+
+.mb-3 {
+    padding-bottom: 20px;
+}
